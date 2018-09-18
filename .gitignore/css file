@@ -1,0 +1,40 @@
+body{
+	margin: 0;
+}
+.conteneur{
+
+	background-color: #ddd;
+}
+
+.structure_plateau{
+
+	width: 65%;
+	float: left;
+	border-radius: 5px;
+	border: 1px solid green;
+
+	
+}
+
+.structure_console{
+
+	width: 30%;
+	float: right;
+	border-radius: 5px;
+	border: 1px solid green;
+
+
+}
+
+#console > p{
+	
+	background-color: #fff;
+	text-align: center;
+	
+}
+
+.clear{
+	
+	clear: both;
+	
+}
