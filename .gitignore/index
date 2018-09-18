@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="style/jeu.css" rel="stylesheet" type="text/css"> 
+	</head>
+	<body>
+		<h1>Jeu de Rôle</h1>
+		
+		
+		<div class="conteneur">
+		
+			<div class="structure_plateau">
+			
+				<div id="plateau">
+				
+					<canvas id="myCanvas">
+					</canvas>
+					
+				</div>
+				
+			</div>
+			<div class="structure_console">
+
+				<div id="console">
+				
+					<p id="nain">Créer un Nain</p>
+					<p id="bouger">Bouger</p>
+					
+					
+				</div>
+				
+			</div>
+			
+			<div class="clear">
+			</div>
+			
+		</div>	
+		
+		<script src = "src/personnage.js"> </script>
+		<script src = "test/testPersonnage.js"> </script>
+		<!-- <script src = "src/jeu.js"> </script> -->
+		
+	</body>
+</html>
