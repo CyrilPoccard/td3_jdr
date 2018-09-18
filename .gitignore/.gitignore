@@ -1,0 +1,78 @@
+//création Personnage
+class Personnage{
+	
+	//définition des attributs de a la classe
+	constructor(nom, race){
+	
+		this.nom = nom;
+		this.race = race;
+		this.avatar = "";
+		this.vitalite = "";
+		this.force = "";
+		this.vitesse = "";
+		this.positionX = "";
+		this.positionY = "";		
+	
+	
+		console.log("Un perso a été créer");
+	}
+	
+	//\brief action etatSante pour afficher la sante d'un perso
+	etatSante(){
+		
+		console.log(this.vitalite);
+	}
+	
+	//\brief action frapper, permet de frapper un ennemi et de tester s'il est encore en vie
+	frapper(ennemi){
+		
+		//l'adversaire est à là même distance
+		if(ennemi.positionX == this.positionX && ennemi.positionY == this.positionY)
+		{
+			//l'ennemi est mort
+			if(ennemi.vitalite == 0)
+			{
+				
+				console.log("Adversaire tué")
+				
+			}
+			//l'ennemi est vivant
+			else
+			{
+				
+				ennemi.vitalite -= this.force;
+				
+				// on définit si la cible est mort ou non
+				if(ennemi.vie < 0 )
+				{
+					ennemi.vie = 0;
+				}
+
+				console.log( this.nom + " a frappe " + ennemi.nom ) ;
+				console.log( ennemi.nom + " a " + ennemi.vie + " point(s) de vie") ;
+				
+			}
+		}
+		else
+		{
+			//l'ennemi est hors de portée
+			console.log("Ennemi hors de porté")
+				
+		}
+		
+	}
+	
+	deplacer(){
+		
+		this.positionX += 50;
+		this.positionY -= 50;
+		
+	}
+
+	
+	toString(){
+		
+		console.log(perso);
+		
+	}
+}
