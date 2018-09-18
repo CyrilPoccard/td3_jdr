@@ -1,0 +1,76 @@
+////////////
+////////////
+////////////
+
+var perso = new Personnage();
+
+////////////
+////////////
+////////////
+
+//on crée le canvas
+var canvas = document.getElementById("myCanvas");
+//un élément 2d dans le canvas
+var ball = canvas.getContext("2d");
+
+////////////
+////////////
+////////////
+
+//on récupère le bouton et lui attribut un eventListener
+var btnCreerNain = document.getElementById("nain");
+btnCreerNain.addEventListener("click", fctCreerNain, false);
+
+
+//fonction pour créer un personnage nain
+function fctCreerNain(){
+		
+	perso.nom = "Woldie";	
+	perso.race = "nain";
+	perso.avatar = ball;
+	perso.vitalite = 10;
+	perso.force = 5;
+	perso.vitesse = 2;
+	perso.positionX = 10;
+	perso.positionY = 10;
+	
+	//on symbolise le perso par un cercle
+	createBall("green");
+	
+	console.log(perso);
+}
+
+
+////////////
+////////////
+////////////
+
+function createBall(color){
+	
+	ball.beginPath();
+	ball.arc(perso.positionX, perso.positionY, 10, 0, Math.PI*2);
+	ball.fillStyle = color;
+	ball.fill();
+	ball.closePath();
+	
+}
+
+////////////
+////////////
+////////////
+
+//on récupère le bouton "bouger" et lui attribut un eventListener
+var btnBouger = document.getElementById("bouger").nextSibling;
+btnBouger.addEventListener("click", deplacer, false);
+
+////////////Je ne sais pas comment appeler "deplacer" et lui fournir ses paramètres attendus...
+////////////De plus il faudrait clear le canvas pour afficher la nouvelle position du cercle...
+////////////Peut-être placer la fonction "createBall" dans la class et qu'elle devienne un method pour que tous les persos puissent bénéficier d'un symbole...?
+////////////
+////////////Il n'y a pas moyen de juste entrer le nom et la race du personnage et qu'une method de la class Personnage fasse un teste est donne
+////////////les valeurs souhaitées pour chaque attribut du perso ?
+////////////
+
+
+
+
